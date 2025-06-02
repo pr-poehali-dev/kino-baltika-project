@@ -59,7 +59,15 @@ const Hero = () => {
               <Icon name="Ticket" size={20} />
               <span>Купить билет</span>
             </button>
-            <button className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-6 py-3 rounded-lg transition-all flex items-center space-x-2">
+            <button
+              onClick={() =>
+                window.open(
+                  "https://vkvideo.ru/video-113076019_456249230?ref_domain=yastatic.net",
+                  "_blank",
+                )
+              }
+              className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-6 py-3 rounded-lg transition-all flex items-center space-x-2"
+            >
               <Icon name="Play" size={20} />
               <span>Трейлер</span>
             </button>
