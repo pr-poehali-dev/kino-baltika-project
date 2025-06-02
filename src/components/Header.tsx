@@ -11,7 +11,7 @@ const Header = () => {
               <Icon name="Film" size={20} className="text-white" />
             </div>
             <div>
-              <h1 className="text-white font-bold text-xl">Киносфера</h1>
+              <h1 className="text-white font-bold text-xl">KINOIMAX</h1>
               <p className="text-orange-500 text-xs">Балтика</p>
             </div>
           </div>

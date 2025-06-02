@@ -9,6 +9,7 @@ interface MovieCardProps {
   ageLimit: string;
   image: string;
   times: string[];
+  trailer?: string;
 }
 
 const MovieCard: React.FC<MovieCardProps> = ({
@@ -19,11 +20,27 @@ const MovieCard: React.FC<MovieCardProps> = ({
   ageLimit,
   image,
   times,
+  trailer,
 }) => {
   return (
     <div className="bg-gray-900 rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300 hover:shadow-2xl">
       <div className="relative">
-        <img src={image} alt={title} className="w-full h-64 object-cover" />
+        <div className="relative w-full h-[354px] overflow-hidden">
+          <img src={image} alt={title} className="w-full h-full object-cover" />
+          {trailer && (
+            <video
+              className="absolute inset-0 w-full h-full object-cover opacity-0 hover:opacity-100 transition-opacity duration-300"
+              src={trailer}
+              muted
+              loop
+              onMouseEnter={(e) => e.currentTarget.play()}
+              onMouseLeave={(e) => {
+                e.currentTarget.pause();
+                e.currentTarget.currentTime = 0;
+              }}
+            />
+          )}
+        </div>
         <div className="absolute top-3 right-3 bg-black/70 backdrop-blur-sm rounded-full px-2 py-1">
           <span className="text-white text-sm font-medium">{ageLimit}</span>
         </div>
